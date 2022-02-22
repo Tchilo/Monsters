@@ -6,8 +6,9 @@ const Card = (props) => {
   <h2>
     {props.monsters.name}
     </h2>
+    <p>{props.monsters.email}</p>
 </div>
   )
 }
 
-export default Card
+export default Card;

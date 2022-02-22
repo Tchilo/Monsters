@@ -5,7 +5,8 @@ class App extends React.Component {
   constructor(props) {
     super(props)
 this.state = {
-  monsters: []
+  monsters: [],
+  search: ''
 }
   }
   componentDidMount(){
@@ -15,10 +16,13 @@ this.state = {
   }
   
   render(){
+  const {monsters, search} = this.state;
+  const filtered = monsters.filter(monster => monster.name.toLowerCase().includes(search.toLowerCase())
+  )
   return (
     <div className="App">
-      <input type='search' placeholder='monster search'/>
-   <CardList  monsters={this.state.monsters}/>
+      <input onChange={e => this.setState({search:e.target.value})} type='search' placeholder='monster search'/>
+   <CardList  monsters={filtered}/>
     </div>
   );
   }
