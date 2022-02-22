@@ -1,8 +1,15 @@
 import React from "react";
 
-class CardList extends React.Component{
-
-
+const CardList = (props) => {
+return (
+<div>
+{props.monsters.map(monster => (
+    <h1>{monster.name}</h1>
+  ))}
+</div>
+)
 }
+
+
 
 export default CardList
