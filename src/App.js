@@ -14,7 +14,6 @@ this.state = {
   }
   
   render(){
-    console.log(this.state);
   return (
     <div className="App">
      {this.state.monsters.map(monster => {
