@@ -15,15 +15,20 @@ this.state = {
     .then(response => response.json())
     .then(users => this.setState({monsters:users}))
   }
-  
+
+  handleChange = (e) => {
+    this.setState({search:e.target.value})
+  }
+
   render(){
   const {monsters, search} = this.state;
   const filtered = monsters.filter(monster => monster.name.toLowerCase().includes(search.toLowerCase())
   )
+  
   return (
     <div className="App">
       <SearchBar placeholder='monster search'
-      handleChange={e => this.setState({search:e.target.value})}
+      handleChange={this.handleChange}
       />
    <CardList  monsters={filtered}/>
     </div>
