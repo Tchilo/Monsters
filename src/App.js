@@ -24,9 +24,10 @@ this.state = {
   const {monsters, search} = this.state;
   const filtered = monsters.filter(monster => monster.name.toLowerCase().includes(search.toLowerCase())
   )
-  
+
   return (
     <div className="App">
+      <h1>Monsters Rolodex</h1>
       <SearchBar placeholder='monster search'
       handleChange={this.handleChange}
       />
